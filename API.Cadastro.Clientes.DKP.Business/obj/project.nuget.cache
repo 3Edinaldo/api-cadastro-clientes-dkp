@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "mSkpk/cneoGWKfqFUB19LKYdErem19i/AUFcjPG5POGq0Qh/SGsiD6iPbR5Quxam2mdAwXDvZeuauw2P4tDXlg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Edinaldo\\source\\repos\\API.Cadastro.Clientes.DKP\\API.Cadastro.Clientes.DKP.Business\\API.Cadastro.Clientes.DKP.Business.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Edinaldo\\.nuget\\packages\\dapper\\2.0.143\\dapper.2.0.143.nupkg.sha512",
+    "C:\\Users\\Edinaldo\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
