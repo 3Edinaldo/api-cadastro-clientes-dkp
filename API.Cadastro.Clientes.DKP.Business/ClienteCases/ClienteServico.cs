@@ -1,6 +1,5 @@
 ﻿using API.Cadastro.Clientes.DKP.Business.Dto;
 using API.Cadastro.Clientes.DKP.Business.Interface;
-using API.Cadastro.Clientes.DKP.Data.Helpers;
 using API.Cadastro.Clientes.DKP.Data.Interface;
 using API.Cadastro.Clientes.DKP.Data.Model;
 using System;
@@ -25,7 +24,7 @@ namespace API.Cadastro.Clientes.DKP.Business.ClienteCases
         {
             var novoCliente = new ClienteModel()
             {
-                CNPJ = clienteRequest.CNPJ,
+                Cnpj = clienteRequest.CNPJ,
                 RazaoSocial = clienteRequest.RazaoSocial,
                 NomeFantasia = clienteRequest.NomeFantasia,
                 Status = clienteRequest.Status
@@ -34,9 +33,9 @@ namespace API.Cadastro.Clientes.DKP.Business.ClienteCases
             if (!novoCliente.IsValid())
                 throw new Exception(novoCliente.MensagemErro);
 
-            bool cnpjJaExiste = await _clienteRepositorio.ObterCliente(novoCliente.CNPJ) != null;
+            bool cnpjJaExiste = await _clienteRepositorio.ObterCliente(novoCliente.Cnpj) != null;
             if (cnpjJaExiste)
-                throw new Exception($"O CNPJ {novoCliente.CNPJ} já existe na base de dados.");
+                throw new Exception($"O CNPJ {novoCliente.Cnpj} já existe na base de dados.");
 
             ClienteDto clienteCriado = await _clienteRepositorio.CriarCliente(novoCliente);
 
@@ -48,7 +47,7 @@ namespace API.Cadastro.Clientes.DKP.Business.ClienteCases
         }
         public async Task<ClienteDto> ObterCliente(string cnpj)
         {
-            var cliente = new ClienteModel() { CNPJ = cnpj };
+            var cliente = new ClienteModel() { Cnpj = cnpj };
 
             if (!cliente.IsValid())
                 throw new Exception(cliente.MensagemErro);
@@ -62,15 +61,15 @@ namespace API.Cadastro.Clientes.DKP.Business.ClienteCases
 
             var clientes = _clienteRepositorio.ObterClientes(ativo);
             listaClientes = (from c in clientes
-                            select new ClienteDto()
-                            {
-                                Id = c.Id,
-                                CNPJ = c.CNPJ,
-                                RazaoSocial = c.RazaoSocial,
-                                NomeFantasia = c.NomeFantasia,
-                                DataInicio = c.DataInicio,
-                                Status = c.Status
-                            }).ToList();
+                             select new ClienteDto()
+                             {
+                                 Id = c.Id,
+                                 Cnpj = c.Cnpj,
+                                 RazaoSocial = c.RazaoSocial,
+                                 NomeFantasia = c.NomeFantasia,
+                                 DataInicio = c.DataInicio,
+                                 Status = c.Status
+                             }).ToList();
 
             return listaClientes;
         }
@@ -84,7 +83,7 @@ namespace API.Cadastro.Clientes.DKP.Business.ClienteCases
 
             var atualizacaoCliente = new ClienteModel(cliente.Id)
             {
-                CNPJ = clienteRequest.CNPJ,
+                Cnpj = clienteRequest.CNPJ,
                 RazaoSocial = clienteRequest.RazaoSocial,
                 NomeFantasia = clienteRequest.NomeFantasia,
                 DataInicio = cliente.DataInicio,
@@ -112,9 +111,9 @@ namespace API.Cadastro.Clientes.DKP.Business.ClienteCases
         }
         public async Task DeletarCliente(string cnpj)
         {
-            var cliente = new ClienteModel() { CNPJ = cnpj };
+            var cliente = new ClienteModel() { Cnpj = cnpj };
 
-            if (!new ClienteModel() { CNPJ = cnpj }.IsValid())
+            if (!new ClienteModel() { Cnpj = cnpj }.IsValid())
                 throw new Exception(cliente.MensagemErro);
 
             cliente = await _clienteRepositorio.ObterCliente(cnpj);

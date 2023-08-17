@@ -34,7 +34,7 @@ namespace API.Cadastro.Clientes.DKP.Data.Repositorio
                 if (affectedRows == 0)
                     throw new Exception("Não foi possível efetuar o registro.");
 
-                return await ObterCliente(cliente.CNPJ);
+                return await ObterCliente(cliente.Cnpj);
             }
             catch (Exception)
             {

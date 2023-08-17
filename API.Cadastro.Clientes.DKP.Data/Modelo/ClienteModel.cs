@@ -1,7 +1,5 @@
 ﻿using API.Cadastro.Clientes.DKP.Data.Helpers;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Cadastro.Clientes.DKP.Data.Model
@@ -16,7 +14,7 @@ namespace API.Cadastro.Clientes.DKP.Data.Model
         }
 
         public int Id { get; }
-        public string CNPJ { get; set; }
+        public string Cnpj { get; set; }
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
         public DateTime DataInicio { get; set; }
@@ -33,12 +31,12 @@ namespace API.Cadastro.Clientes.DKP.Data.Model
         {
             MensagemErro = "";
 
-            if (!ValidacaoHelper.CnpjValido(CNPJ) ||
-                !CNPJ.EUmNumero() ||
-                !(CNPJ.HasLength(CnpjLength))
+            if (!ValidacaoHelper.CnpjValido(Cnpj) ||
+                !Cnpj.EUmNumero() ||
+                !(Cnpj.HasLength(CnpjLength))
             )
             {
-                MensagemErro = $"O CNPJ {CNPJ} não é válido.";
+                MensagemErro = $"O CNPJ {Cnpj} não é válido.";
                 return false;
             }
 
