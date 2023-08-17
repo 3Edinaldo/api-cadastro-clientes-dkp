@@ -36,7 +36,7 @@ namespace API.Cadastro.Clientes.DKP.Controllers
             }
         }
 
-        [HttpGet("obter-cliente-id/{id}")]
+        [HttpGet("obter-cliente-id")]
         public async Task<IActionResult> ObterClienteId(int id)
         {
             if (!ModelState.IsValid)
@@ -161,7 +161,7 @@ namespace API.Cadastro.Clientes.DKP.Controllers
             }
         }
 
-        [HttpDelete("deletar-cliente-id/{id}")]
+        [HttpDelete("deletar-cliente-id")]
         public async Task<IActionResult> DeletarCliente(int id)
         {
             try
