@@ -14,7 +14,7 @@ namespace API.Cadastro.Clientes.DKP.Data.Repositorio
     {
         private const bool ok = true;
         private readonly IConnectionString _connection;
-        private IDbConnection db;
+        private readonly IDbConnection db;
 
         public ClienteRepositorio(IConnectionString connection)
         {
