@@ -29,7 +29,7 @@ namespace API.Cadastro.Clientes.DKP.Business.Dto
         [JsonProperty("Id")]
         public int Id { get; set; }
         [JsonProperty("CNPJ")]
-        public string CNPJ { get; set; }
+        public string Cnpj { get; set; }
         [JsonProperty("RazaoSocial")]
         public string RazaoSocial { get; set; }
         [JsonProperty("NomeFantasia")]
@@ -43,7 +43,7 @@ namespace API.Cadastro.Clientes.DKP.Business.Dto
             => clienteModel == null ? new ClienteDto() : new ClienteDto
             {
                 Id = clienteModel.Id,
-                CNPJ = clienteModel.CNPJ,
+                Cnpj = clienteModel.Cnpj,
                 RazaoSocial = clienteModel.RazaoSocial,
                 NomeFantasia = clienteModel.NomeFantasia,
                 DataInicio = clienteModel.DataInicio,

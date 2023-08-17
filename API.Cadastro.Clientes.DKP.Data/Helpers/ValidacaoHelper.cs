@@ -90,7 +90,8 @@ namespace API.Cadastro.Clientes.DKP.Data.Helpers
         /// </summary>
         /// <param name="value"></param>
         /// <returns>int</returns>
-        public static int ToInt(this bool value) {
+        public static int ToInt(this bool value)
+        {
             return (value ? 1 : 0);
         }
         public static bool ExceededCharacters(this string value, int minValue, int maxValue)
