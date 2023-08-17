@@ -14,6 +14,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace API.Cadastro.Clientes.DKP
@@ -47,6 +48,10 @@ namespace API.Cadastro.Clientes.DKP
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API.Cadastro.Clientes.DKP", Version = "v1" });
             });
             #endregion
+
+            services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

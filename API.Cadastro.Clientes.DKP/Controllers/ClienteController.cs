@@ -3,6 +3,7 @@ using API.Cadastro.Clientes.DKP.Business.Dto;
 using API.Cadastro.Clientes.DKP.Business.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace API.Cadastro.Clientes.DKP.Controllers
@@ -28,7 +29,7 @@ namespace API.Cadastro.Clientes.DKP.Controllers
             {
                 var clienteCriado = _clienteServico.CriarCliente(cliente);
 
-                return Created($"/obter-cliente-id/{clienteCriado.Id}", clienteCriado);
+                return Created($"criar-cliente", clienteCriado.Result);
             }
             catch (Exception ex)
             {
@@ -86,7 +87,7 @@ namespace API.Cadastro.Clientes.DKP.Controllers
 
             try
             {
-                var clientes = _clienteServico.ObterClientes(true);
+                List<ClienteDto> clientes = _clienteServico.ObterClientes(true);
 
                 if (clientes.Count == 0)
                     return NotFound(ActionResultMessageConst.SemDadosParaApresentacao);
@@ -107,7 +108,7 @@ namespace API.Cadastro.Clientes.DKP.Controllers
 
             try
             {
-                var clientes = _clienteServico.ObterClientes(false);
+                List<ClienteDto> clientes = _clienteServico.ObterClientes(false);
 
                 if (clientes.Count == 0)
                     return NotFound(ActionResultMessageConst.SemDadosParaApresentacao);
@@ -128,7 +129,7 @@ namespace API.Cadastro.Clientes.DKP.Controllers
 
             try
             {
-                var clientes = _clienteServico.ObterClientes();
+                List<ClienteDto> clientes = _clienteServico.ObterClientes();
 
                 if (clientes.Count == 0)
                     return NotFound(ActionResultMessageConst.SemDadosParaApresentacao);
