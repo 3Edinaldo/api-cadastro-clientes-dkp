@@ -79,7 +79,7 @@ namespace API.Cadastro.Clientes.DKP.Controllers
         ///         "razaoSocial": "XPTO SA",
         ///         "nomeFantasia": "XPTO",
         ///         "dataInicio": "2023-08-16T15:06:18.92",
-        ///         "status": false
+        ///         "status": true
         ///     },
         ///     {
         ///         "id": 6,
@@ -87,7 +87,7 @@ namespace API.Cadastro.Clientes.DKP.Controllers
         ///         "razaoSocial": "JB12 LTDA",
         ///         "nomeFantasia": "JB12",
         ///         "dataInicio": "2023-08-17T18:05:33.197",
-        ///         "status": false
+        ///         "status": true
         ///     }
         /// ]
         ///     
@@ -318,18 +318,6 @@ namespace API.Cadastro.Clientes.DKP.Controllers
         /// <summary>
         /// Exclui um cliente através do Id
         /// </summary>
-        /// <remarks>
-        /// Exemplo:
-        ///
-        ///     PUT /Todo
-        ///     {
-        ///         "cnpj": "95650878000189",
-        ///         "razaoSocial": "XPTO SA",
-        ///         "nomeFantasia": "XPTO",
-        ///         "status": false
-        ///     }
-        ///
-        /// </remarks>
         /// <returns>Mensagem informando a exclusão.</returns>
         /// <response code="200">Mensagem informando a exclusão do Id informado.</response>
         /// <response code="400">Se ocorrer alguma exceção.</response>
@@ -357,18 +345,6 @@ namespace API.Cadastro.Clientes.DKP.Controllers
         /// <summary>
         /// Exclui um cliente através do CNPJ
         /// </summary>
-        /// <remarks>
-        /// Exemplo:
-        ///
-        ///     PUT /Todo
-        ///     {
-        ///         "cnpj": "95650878000189",
-        ///         "razaoSocial": "XPTO SA",
-        ///         "nomeFantasia": "XPTO",
-        ///         "status": false
-        ///     }
-        ///
-        /// </remarks>
         /// <returns>Mensagem informando a exclusão.</returns>
         /// <response code="200">Mensagem informando a exclusão do cnpj informado.</response>
         /// <response code="400">Se ocorrer alguma exceção.</response>
